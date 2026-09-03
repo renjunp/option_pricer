@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "option-pricer"
+version = "0.1.0"
+description = "European option pricing: Black-Scholes closed form, finite differences (backward Euler and Crank-Nicolson), and Monte Carlo with antithetic variates"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "matplotlib>=3.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["option_pricer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
